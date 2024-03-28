@@ -1,21 +1,17 @@
 import wk05
 
 
-def sequential(f, x_start, x_end, delta_x, epsilon=1e-6,):
-    xp = x_start
-
+def bisection(f, x_lower, x_upper, epsilon=1e-6,):
     while True:
-        d = wk05.wk05(f, xp, delta_x, epsilon)
+        d = wk05.wk05(f, x_lower, x_upper, epsilon)
 
         if d['found']:
             break
-        elif d['x'] > x_end:
-            d['x'] = 'not found'
-            break
         else:
-            xp = d['x']
+            x_lower = d['x_lower']
+            x_upper = d['x_upper']
 
-    return d['x']
+    return d['x_lower']
 
 
 def poly(x):
@@ -23,8 +19,8 @@ def poly(x):
 
 
 def main():
-    d = sequential(poly, 4, 5, 1e-6)
-    print(f"poly({d['x']}) = {poly(d['x'])} is close to zero.")
+    x = bisection(poly, 0, 100, 1e-6)
+    print(f"poly({x}) = {poly(x)} is close to zero.")
 
 
 if "__main__" == __name__:
