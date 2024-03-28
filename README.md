@@ -1,7 +1,7 @@
-## wk04 seq_step
+## wk05 bisection_step
 
-* Exercise file 실습파일 : wk04.py
-* Complete function `wk04()` as follows.<br>함수 `wk04()`을 다음과 같이 완성하시오.
+* Exercise file 실습파일 : wk05.py
+* Complete function `wk05()` as follows.<br>함수 `wk05()`을 다음과 같이 완성하시오.
 * Accept following arguments<br>다음과 같은 매개변수를 받아들이시오 :
 
 argument<br>매개변수 | type<br>변수형 | description<br>설명
@@ -20,7 +20,7 @@ key | type of value<br>value 의 자료형 | description<br>설명
 
 * Withtin the file, leave lines belong to the functions only.<br>해당 파이썬 스크립트 파일에는 해당 함수만 제출 바랍니다.
 * Do not use any other modules<br>다른 모듈은 사용하지 마시오.
-* Change wk04.py file only<br>wk04.py 파일만 변경하시오.
+* Change wk05.py file only<br>wk05.py 파일만 변경하시오.
 
 ## How to use Github web editor<br>Github 웹 편집기 사용법
 * Press <kbd>.</kbd> key to start MS VS Code web editor<br><kbd>.</kbd> 키를 누르면 MS VS Code 의 Web version 이 시작됨
