@@ -1,9 +1,9 @@
-import wk05
+import main
 
 
 def bisection(f, x_lower, x_upper, epsilon=1e-6,):
     while True:
-        d = wk05.wk05(f, x_lower, x_upper, epsilon)
+        d = main.wk05(f, x_lower, x_upper, epsilon)
 
         if d['found']:
             break
