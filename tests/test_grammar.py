@@ -1,6 +1,7 @@
 import ast
 import logging
 import pathlib
+import sys
 
 import pytest
 
@@ -8,6 +9,10 @@ import pytest
 file_path = pathlib.Path(__file__)
 test_folder = file_path.parent.absolute()
 proj_folder = test_folder.parent.absolute()
+
+
+sys.path.insert(0, str(proj_folder))
+
 
 logger = logging.getLogger(__file__)
 logger.setLevel(logging.INFO)
@@ -42,3 +47,4 @@ def test_module(py_file:pathlib.Path):
 
 def test_importable():
     import main
+    assert main is not None
