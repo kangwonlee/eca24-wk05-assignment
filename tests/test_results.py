@@ -84,6 +84,9 @@ def test__choose_upper__not_found(root:float, f:Callable[[float], float], small_
     d = main.wk05(f, x_lower, x_upper, epsilon=small_epsilon)
 
     assert not d['found']
+
+    assert f(d['x_upper']) * f(d['x_lower']) < 0, "The root is not between the two points."
+
     assert math.isclose(d['x_upper'], x_next)
     assert math.isclose(d['x_lower'], x_lower)
 
@@ -104,6 +107,9 @@ def test__choose_lower__not_found(root:float, f:Callable[[float], float], small_
     d = main.wk05(f, x_lower, x_upper, epsilon=small_epsilon)
 
     assert not d['found']
+
+    assert f(d['x_upper']) * f(d['x_lower']) < 0, "The root is not between the two points."
+
     assert math.isclose(d['x_upper'], x_upper)
     assert math.isclose(d['x_lower'], x_next)
 
@@ -130,6 +136,9 @@ def test__choose_upper__found(root:float, f:Callable[[float], float], big_epsilo
     d = main.wk05(f, x_lower, x_upper, epsilon=big_epsilon)
 
     assert d['found']
+
+    assert f(d['x_upper']) * f(d['x_lower']) < 0, "The root is not between the two points."
+
     assert math.isclose(d['x_upper'], x_next)
     assert math.isclose(d['x_lower'], x_lower)
 
@@ -156,6 +165,9 @@ def test__choose_lower__found(root:float, f:Callable[[float], float], big_epsilo
     d = main.wk05(f, x_lower, x_upper, epsilon=big_epsilon)
 
     assert d['found']
+
+    assert f(d['x_upper']) * f(d['x_lower']) < 0, "The root is not between the two points."
+
     assert math.isclose(d['x_upper'], x_upper)
     assert math.isclose(d['x_lower'], x_next)
 
