@@ -85,7 +85,7 @@ def test__choose_upper__not_found(root:float, f:Callable[[float], float], small_
 
     assert not d['found']
 
-    assert f(d['x_upper']) * f(d['x_lower']) < 0, "The root is not between the two points."
+    assert f(d['x_upper']) * f(d['x_lower']) < 0, "The function values of both two bounds have the same signs. 상한과 하한에서 함수값의 부호가 다르지 않음."
 
     assert math.isclose(d['x_upper'], x_next)
     assert math.isclose(d['x_lower'], x_lower)
@@ -108,7 +108,7 @@ def test__choose_lower__not_found(root:float, f:Callable[[float], float], small_
 
     assert not d['found']
 
-    assert f(d['x_upper']) * f(d['x_lower']) < 0, "The root is not between the two points."
+    assert f(d['x_upper']) * f(d['x_lower']) < 0, "The function values of both two bounds have the same signs. 상한과 하한에서 함수값의 부호가 다르지 않음."
 
     assert math.isclose(d['x_upper'], x_upper)
     assert math.isclose(d['x_lower'], x_next)
@@ -137,7 +137,7 @@ def test__choose_upper__found(root:float, f:Callable[[float], float], big_epsilo
 
     assert d['found']
 
-    assert f(d['x_upper']) * f(d['x_lower']) < 0, "The root is not between the two points."
+    assert f(d['x_upper']) * f(d['x_lower']) < 0, "The function values of both two bounds have the same signs. 상한과 하한에서 함수값의 부호가 다르지 않음."
 
     assert math.isclose(d['x_upper'], x_next)
     assert math.isclose(d['x_lower'], x_lower)
@@ -166,9 +166,9 @@ def test__choose_lower__found(root:float, f:Callable[[float], float], big_epsilo
 
     assert d['found']
 
-    assert f(d['x_upper']) * f(d['x_lower']) < 0, "The root is not between the two points."
+    assert f(d['x_upper']) * f(d['x_lower']) < 0, "The function values of both two bounds have the same signs. 상한과 하한에서 함수값의 부호가 다르지 않음."
 
-    assert math.isclose(d['x_upper'], x_upper)
+    assert math.isclose(d['x_upper'], x_upper), ""
     assert math.isclose(d['x_lower'], x_next)
 
 def test__both_below(root:float, f:Callable[[float], float], small_epsilon:float):
@@ -184,7 +184,7 @@ def test__both_below(root:float, f:Callable[[float], float], small_epsilon:float
     except ValueError:
         pass
     else:
-        assert False, "Should have raised a ValueError"
+        assert False, "Should have raised a ValueError. ValueError 를 발생시켰어야 함."
 
 
 def test__both_above(root:float, f:Callable[[float], float], small_epsilon:float):
@@ -200,7 +200,7 @@ def test__both_above(root:float, f:Callable[[float], float], small_epsilon:float
     except ValueError:
         pass
     else:
-        assert False, "Should have raised a ValueError"
+        assert False, "Should have raised a ValueError. ValueError 를 발생시켰어야 함."
 
 
 if "__main__" == __name__:
