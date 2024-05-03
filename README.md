@@ -16,8 +16,8 @@ argument<br>매개변수 | type<br>변수형 | description<br>설명
 
 key | type of value<br>value 의 자료형 | description<br>설명
 :-----:|:-----:|-----
-`'x_lower'` | `float` | new upper bound<br>구간의 새로운 상한
-`'x_upper'` | `float` | new lower bound<br>구간의 새로운 하한
+`'x_lower'` | `float` | new lower bound<br>구간의 새로운 상한
+`'x_upper'` | `float` | new upper bound<br>구간의 새로운 하한
 `'found'` | `bool` | have we found it?<br>찾았나?
 
 * Withtin the file, leave lines belong to the functions only.<br>해당 파이썬 스크립트 파일에는 해당 함수만 제출 바랍니다.
