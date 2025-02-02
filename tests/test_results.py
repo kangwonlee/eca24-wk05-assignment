@@ -31,7 +31,7 @@ sys.path.insert(
 )
 
 
-import main
+import exercise
 
 
 random.seed()
@@ -81,7 +81,7 @@ def test__choose_upper__not_found(root:float, f:Callable[[float], float], small_
     assert math.isclose(abs(x_lower - x_next), abs(x_upper - x_next))
     assert (f(x_lower) * f(x_upper)) < 0
 
-    d = main.wk05(f, x_lower, x_upper, epsilon=small_epsilon)
+    d = exercise.wk05(f, x_lower, x_upper, epsilon=small_epsilon)
 
     assert not d['found'], "Please check whether the root found.\n근을 찾은 것이 맞는지 확인 바람."
 
@@ -110,7 +110,7 @@ def test__choose_lower__not_found(root:float, f:Callable[[float], float], small_
     assert math.isclose(abs(x_lower - x_next), abs(x_upper - x_next))
     assert (f(x_lower) * f(x_upper)) < 0
 
-    d = main.wk05(f, x_lower, x_upper, epsilon=small_epsilon)
+    d = exercise.wk05(f, x_lower, x_upper, epsilon=small_epsilon)
 
     assert not d['found'], "Please check whether the root found.\n근을 찾은 것이 맞는지 확인 바람."
 
@@ -145,7 +145,7 @@ def test__choose_upper__found(root:float, f:Callable[[float], float], big_epsilo
     assert math.isclose(abs(x_lower - x_next), abs(x_upper - x_next))
     assert (f(x_lower) * f(x_upper)) < 0
 
-    d = main.wk05(f, x_lower, x_upper, epsilon=big_epsilon)
+    d = exercise.wk05(f, x_lower, x_upper, epsilon=big_epsilon)
 
     assert d['found'], "Please check whether the root found.\n근을 찾은 것이 맞는지 확인 바람."
 
@@ -180,7 +180,7 @@ def test__choose_lower__found(root:float, f:Callable[[float], float], big_epsilo
     assert math.isclose(abs(x_lower - x_next), abs(x_upper - x_next))
     assert (f(x_lower) * f(x_upper)) < 0
 
-    d = main.wk05(f, x_lower, x_upper, epsilon=big_epsilon)
+    d = exercise.wk05(f, x_lower, x_upper, epsilon=big_epsilon)
 
     assert d['found'], "Please check whether the root found.\n근을 찾은 것이 맞는지 확인 바람."
 
@@ -205,7 +205,7 @@ def test__both_below(root:float, f:Callable[[float], float], small_epsilon:float
     assert (f(x_lower) * f(x_upper)) > 0
 
     try:
-        d = main.wk05(f, x_lower, x_upper, epsilon=small_epsilon)
+        d = exercise.wk05(f, x_lower, x_upper, epsilon=small_epsilon)
     except ValueError:
         pass
     else:
@@ -221,7 +221,7 @@ def test__both_above(root:float, f:Callable[[float], float], small_epsilon:float
     assert (f(x_lower) * f(x_upper)) > 0
 
     try:
-        d = main.wk05(f, x_lower, x_upper, epsilon=small_epsilon)
+        d = exercise.wk05(f, x_lower, x_upper, epsilon=small_epsilon)
     except ValueError:
         pass
     else:

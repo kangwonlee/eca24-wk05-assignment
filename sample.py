@@ -1,9 +1,9 @@
-import main
+import exercise
 
 
 def bisection(f, x_lower, x_upper, epsilon=1e-6,):
     while True:
-        d = main.wk05(f, x_lower, x_upper, epsilon)
+        d = exercise.wk05(f, x_lower, x_upper, epsilon)
 
         if d['found']:
             break
@@ -18,10 +18,10 @@ def poly(x):
     return x * x - 20
 
 
-def main():
+def exercise():
     x = bisection(poly, 0, 100, 1e-6)
     print(f"poly({x}) = {poly(x)} is close to zero.")
 
 
 if "__main__" == __name__:
-    main()
+    exercise()
